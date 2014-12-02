@@ -3,6 +3,8 @@ package com.gmail.darrenofwales.rockpaperscissors;
 import java.util.Random;
 import java.util.Scanner;
 
+import static com.gmail.darrenofwales.rockpaperscissors.Choice.*;
+
 /**
  * Created by darrenrose on 01/12/2014.
  */
@@ -13,11 +15,11 @@ public class Game {
         int i = random.nextInt(3);
         switch (i){
             case 0:
-                return Choice.ROCK;
+                return ROCK;
             case 1:
-                return Choice.PAPER;
+                return PAPER;
             default :
-                return Choice.SCISSORS;
+                return SCISSORS;
         }
     }
 
@@ -70,7 +72,7 @@ public class Game {
                     System.out.println("Computer has chosen, make your choice.");
                     Choice computer = game.randomChoice();
                     Choice player = game.playerChoice();
-                    Choice.Result result = player.plays(computer);
+                    Result result = player.plays(computer);
                     System.out.println("player " + result);
                     System.out.println("computer chose " + computer);
                     break;
